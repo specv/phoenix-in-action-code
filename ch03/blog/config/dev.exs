@@ -68,8 +68,6 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :blog, Blog.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "blog_dev",
-  hostname: "localhost",
-  pool_size: 10
+  database: "_build/blog.db",
+  # avoid creating shm and wal files
+  journal_mode: :off
